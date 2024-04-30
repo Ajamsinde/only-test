@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>addnewtask</ion-title>
+    <ion-icon name="close" slot="end" size="large" class="padding" (click)="dismis()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-item>
+      <ion-textarea placeholder="write task here pls ..."></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>priority</ion-label>
+      <ion-select>
+        <ion-select-option value="low">low</ion-select-option>
+        <ion-select-option value="high">high</ion-select-option>
+        <ion-select-option value="middle">middle</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="pricetag-outline" slot="start"></ion-icon>
+      <ion-label>catagory</ion-label>
+    </ion-item>
+  <ion-button class="ion-margin" expand="block">Add Task</ion-button>
+
+
+
+
+
+
+
+  
+
+  </ion-card>
+  
+</ion-content>

@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-item lines="none">
+      <ion-label style="font-weight: 800; font-size: 3em;">
+        Today
+
+        <p style="font-weight: 400 ; color: rgb(79, 22, 186);">{{ today | date:'fullDate'  }}</p>
+
+      </ion-label>
+
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+<ion-card *ngFor="let item of todolist" class="ion-margin">
+  
+  <ion-card-header>
+    <ion-card-subtitle [style.color]="item.itempririte === 'high' ? 'red'  : (item.itempririte === 'low' ? 'green' : 'orange')">{{ item.itemcatagori}}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-item>
+    <ion-icon *ngIf="item.itempririte === 'high' " color="danger"  name="ellipse"></ion-icon>
+    <ion-icon *ngIf="item.itempririte === 'low' " color="success"  name="ellipse"></ion-icon>
+    <ion-icon *ngIf="item.itempririte === 'middle' " color="warning"  name="ellipse"></ion-icon>
+
+
+    <ion-label>{{ item.itemname}}</ion-label>
+
+  </ion-item>
+
+  <ion-card-content>
+    <ion-label>
+
+    {{  item.itemdate | date:'fullDate'   }}  
+
+    </ion-label>
+  </ion-card-content>
+
+  
+  <ion-row>
+    <ion-item>
+      <ion-icon name="share-outline"></ion-icon>
+      <p>share</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="checkmark-outline"></ion-icon>
+      <p>complite</p>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-icon name="trash-outline"></ion-icon>
+      <p>trash</p>
+    </ion-item>
+
+  </ion-row>
+
+
+</ion-card>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="addnewtask()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+
+</ion-content>
